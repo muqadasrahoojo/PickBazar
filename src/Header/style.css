@@ -1,0 +1,18 @@
+/* AppBar sticky styling */
+.sticky-appbar {
+    position: sticky;
+    padding: 10px 0px;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(204, 198, 198, 0.1) !important;
+}
+
+.sticky-appbar {
+    transition: box-shadow 0.3s ease, border-bottom 0.3s ease !important ;
+}
+
+.sticky-appbar.scrolled {
+    border-bottom: 2px solid #019376 !important;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1) !important;
+
+}
