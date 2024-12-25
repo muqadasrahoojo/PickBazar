@@ -1,8 +1,8 @@
 import './App.css';
+import ClippedDrawer from './components/ClippedDrawer/ClippedDrawer';
 import HeroSection from './components/HeroSection/HeroSection';
 import ImageSwiper from './components/SlideImgs/SlideImgs';
-// import CategoryMenu from './componnets/CategoryMenu/CategoryMenu';
-// import SliderImgs from './componnets/SliderImgs/SliderImgs';
+
 import Header from './Header/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -14,7 +14,7 @@ function App() {
       < Header />
       < HeroSection />
       < ImageSwiper />
-      {/* <CategoryMenu /> */}
+      < ClippedDrawer />
     </div>
   );
 }

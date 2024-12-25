@@ -26,7 +26,7 @@ const ImageSwiper = () => {
         768: { slidesPerView: 3 }, 
         1024: { slidesPerView: 3 }, 
       }}
-      className="py-4"
+      className="py-4 container-fluid"
     >
       {images.map((image, index) => (
         <SwiperSlide key={index}>

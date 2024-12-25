@@ -16,7 +16,6 @@ import {
   List,
   ListItemText,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
@@ -24,9 +23,9 @@ import MoreIcon from "@mui/icons-material/MoreVert";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { useTheme } from "@mui/material/styles";
 import Logo from "../../src/assets/Imgs/Logo-new.webp";
-import AppleIcon from '@mui/icons-material/Apple';
+import { Icon } from '@iconify/react';
+import fluentFoodApple from '@iconify/icons-fluent/food-apple-20-regular';
 import './style.css';
-
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -164,26 +163,18 @@ export default function Header() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
-      className="sticky-appbar"
-        // position="sticky"
+        className="sticky-appbar"
+
         sx={{
           top: 0,
-          zIndex: 1300, // Higher z-index to ensure visibility
-          backgroundColor: "#fafafa",
+          zIndex: 1300, 
+          backgroundColor: "#FAFAFA",
           color: "#000",
           boxShadow: "none",
         }}
       >
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
+          
           <Typography
             variant="h6"
             noWrap
@@ -193,60 +184,7 @@ export default function Header() {
             <img src={Logo} alt="Logo" style={{ height: "30px" }} />
           </Typography>
 
-          {/* Multiple Select Dropdown */}
-          {/* <FormControl sx={{ m: 1, width: 160, ml: 1 }}>
-            <Select
-              sx={{
-                color: ''
-              }}
-              multiple
-              displayEmpty
-              value={personName}
-              onChange={handleChange}
-              input={<OutlinedInput />}
-              renderValue={(selected) => {
-                if (selected.length === 0) {
-
-
-                  return (
-                    <Typography
-                      component="em"
-                      sx={{
-                        color: "#019376",
-                        display: "flex",
-                        alignItems: "center",
-                      }}
-                    >
-                      <AppleIcon sx={{ marginRight: "8px", color: "#019376" }} />
-                      Grocery
-                    </Typography>
-                  );
-
-                }
-                return selected.join(", ");
-              }}
-              MenuProps={MenuProps}
-              inputProps={{ "aria-label": "Without label" }}
-              sx={{
-                height: "38px",
-                "& .MuiOutlinedInput-root": {
-                  padding: "4px 3px",
-                },
-              }}
-            >
-              {names.map((name) => (
-                <MenuItem
-                  key={name}
-                  value={name}
-                  style={getStyles(name, personName, theme)}
-                >
-                  {name}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl> */}
-
-          <FormControl sx={{ m: 1, width: 160, ml: 1 }}>
+          <FormControl sx={{ m: 1, width: 160, ml: 1 , marginLeft: '30px', }}>
             <Select
               multiple
               displayEmpty
@@ -259,12 +197,18 @@ export default function Header() {
                     <Typography
                       component="em"
                       sx={{
-                        color: "#019376",
+                        color: "#019376", 
                         display: "flex",
                         alignItems: "center",
+                        
                       }}
                     >
-                      <AppleIcon sx={{ marginRight: "8px", color: "#019376" }} />
+                      <Icon
+                        icon={fluentFoodApple}
+                        style={{ marginRight: "4px", color: "#019376", fontSize: "24px" }}
+                        width="24px"
+                        height="24px"
+                      />
                       Grocery
                     </Typography>
                   );
@@ -275,9 +219,20 @@ export default function Header() {
               inputProps={{ "aria-label": "Without label" }}
               sx={{
                 height: "38px",
-                color: "#019376", // Add desired color here
+                color: "#019376", 
                 "& .MuiOutlinedInput-root": {
                   padding: "4px 3px",
+                },
+                "& .MuiSelect-icon": {
+                  color: "#019376", 
+                },
+                "& .MuiSelect-filled": {
+                  backgroundColor: "transparent", 
+                },
+                "&:hover": {
+                  "& .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "#019376", 
+                  },
                 },
               }}
             >
@@ -285,7 +240,9 @@ export default function Header() {
                 <MenuItem
                   key={name}
                   value={name}
-                  style={getStyles(name, personName, theme)}
+                  style={{
+                    color: "#019376", 
+                  }}
                 >
                   {name}
                 </MenuItem>
