@@ -6,8 +6,7 @@ import SearchIcon from '@mui/icons-material/Search';
 
 const HeroSection = () => {
   return (
-    <Box
-
+    <Box  className="d-none d-lg-flex flex-column justify-content-center align-items-center text-center text-white"
       sx={{
         position: 'relative',
         width: '100%',
@@ -23,7 +22,6 @@ const HeroSection = () => {
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'scroll',
       }}
-
     >
       <Box
         sx={{
@@ -35,8 +33,6 @@ const HeroSection = () => {
           color: 'black',
         }}
       >
-
-
         <Typography
           variant="h4"
           sx={{
@@ -68,40 +64,36 @@ const HeroSection = () => {
               md: '20px',
               lg: '17px',
             },
-
           }}
         >
           Get your healthy foods & snacks delivered at your doorsteps all day every day
         </Typography>
-
-
       </Box>
 
-      <Box sx={{
-        marginTop: {
-          xs: '7%',
-          sm: '7%',
-          md: '7%',
-          lg: '10%'
-        }
-      }} className=' d-flex justify-content-center'>
+      <Box
+        sx={{
+          marginTop: {
+            xs: '7%',
+            sm: '7%',
+            md: '7%',
+            lg: '10%',
+          },
+        }}
+        className="d-flex justify-content-center"
+      >
         <Paper
           component="form"
           sx={{
-
             display: 'flex',
             alignItems: 'center',
             width: '620px',
             borderRadius: '5px 0px 0px 5px',
-            boxShadow: "0 5px 6px rgba(167, 157, 157, 0.2)",
-            // boxShadow: 'none',
+            boxShadow: '0 5px 6px rgba(167, 157, 157, 0.2)',
             padding: '2px 10px',
             backgroundColor: '#ffffff',
             '&:focus-within': {
               border: '1px solid #019376',
             },
-
-
           }}
         >
           <InputBase
@@ -109,16 +101,18 @@ const HeroSection = () => {
               flex: 1,
               fontSize: '14px',
               color: '#000',
-              paddingLeft: '10px'
+              paddingLeft: '10px',
             }}
             placeholder="Search your products from here"
             inputProps={{ 'aria-label': 'search products' }}
           />
         </Paper>
+
+        {/* Button will be hidden on small screens */}
         <Button
           variant="contained"
           sx={{
-            display: 'flex',
+            display: { xs: 'none', sm: 'flex' },  // Hide the button on small screens (xs)
             alignItems: 'center',
             gap: '5px',
             backgroundColor: '#019376',
@@ -133,16 +127,8 @@ const HeroSection = () => {
           </Typography>
         </Button>
       </Box>
-
     </Box>
   );
 };
 
-
-
-
 export default HeroSection;
-
-
-
-

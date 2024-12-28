@@ -1,4 +1,5 @@
 import './App.css';
+import StickySidebar from './components/ClippedDrawer/ClippedDrawer';
 import ClippedDrawer from './components/ClippedDrawer/ClippedDrawer';
 import HeroSection from './components/HeroSection/HeroSection';
 import ImageSwiper from './components/SlideImgs/SlideImgs';
@@ -14,9 +15,13 @@ function App() {
       < Header />
       < HeroSection />
       < ImageSwiper />
-      < ClippedDrawer />
+      {/* < ClippedDrawer /> */}
+      <StickySidebar />
     </div>
   );
 }
 
 export default App;
+
+
+
