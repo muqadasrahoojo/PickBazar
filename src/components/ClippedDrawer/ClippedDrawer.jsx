@@ -21,12 +21,14 @@ import {
 import { useTheme } from '@mui/material/styles';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
-import MenuIcon from '@mui/icons-material/Menu';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { Icon } from '@iconify/react';
 import fluentFoodApple from '@iconify/icons-fluent/food-apple-20-regular';
 import meatOutline from '@iconify/icons-mdi/meat-outline';
+import { Menu } from '@mui/icons-material';
 import TuneOutlinedIcon from '@mui/icons-material/TuneOutlined';
+
+
 
 const drawerWidth = 240;
 
@@ -115,7 +117,6 @@ const ProductList = ({ selectedCategory }) => {
 };
 
 export default function DualDrawerSidebar() {
-
   const categories = [
     { name: 'Fruits & Vegetables', items: ['Apples', 'Bananas', 'Carrots'], icon: <Icon icon={fluentFoodApple} style={{ marginRight: '4px', fontSize: '24px' }} /> },
     { name: 'Meat & Fish', items: ['Chicken', 'Salmon', 'Tuna'], icon: <Icon icon={meatOutline} style={{ marginRight: '4px', fontSize: '24px' }} /> },
@@ -131,22 +132,22 @@ export default function DualDrawerSidebar() {
 
   const [openCategory, setOpenCategory] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const theme = useTheme();
-  const isLargeScreen = useMediaQuery(theme.breakpoints.up('md'));
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   const handleClick = (category) => {
     setOpenCategory(openCategory === category ? null : category);
     setSelectedCategory(category);
   };
 
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const theme = useTheme();
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up('md'));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+
   const handleMobileDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
   const drawerContent = (
-
     <List>
       {categories.map((category) => (
         <div key={category.name}>
@@ -172,6 +173,7 @@ export default function DualDrawerSidebar() {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
+
       {isLargeScreen && (
         <Drawer
           variant="permanent"
@@ -194,14 +196,67 @@ export default function DualDrawerSidebar() {
 
       <Box component="main" sx={{ backgroundColor: '#f3f4f6', flexGrow: 1, p: 1, height: '100vh', overflowY: 'auto' }}>
         <Toolbar />
+        {isSmallScreen && (
+
+          <Box
+            className='mb-5'
+            sx={{
+              display: 'flex',
+              justifyContent: 'left',
+              mb: 2,
+              position: 'sticky',
+              top: '70px',
+              zIndex: 1,
+            }}
+          >
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleMobileDrawerToggle}
+              sx={{
+                border: '1px solid #d0d0d0',
+                backgroundColor: '#f9f9f9', 
+                color: '#333', 
+                borderRadius: '4px', 
+                padding: '4px 12px', 
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+                '&:hover': {
+                  backgroundColor: '#e0e0e0', 
+                },
+              }}
+            >
+              <TuneOutlinedIcon /> <span style={{ fontSize: '14px', fontWeight: 500 }}>Filter</span>
+            </IconButton>
+          </Box>
+
+        )}
+
         <ProductList selectedCategory={selectedCategory} />
       </Box>
+
+      {isSmallScreen && (
+        <Drawer
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleMobileDrawerToggle}
+          ModalProps={{
+            keepMounted: true,
+          }}
+          sx={{
+          '& .MuiDrawer-paper': {
+            width: drawerWidth,
+            top: '69px',
+            height: `calc(100vh - 64px)`,
+            boxSizing: 'border-box',
+          },
+        }}
+        >
+          {drawerContent}
+        </Drawer>
+      )}
     </Box>
   );
-
-
- 
-  
 }
-
-

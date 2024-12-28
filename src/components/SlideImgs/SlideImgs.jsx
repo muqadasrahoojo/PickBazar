@@ -16,7 +16,7 @@ const ImageSwiper = () => {
 
 
   const swiperStyles = {
-    marginTop: window.innerWidth <= 768 ? "90px" : "0",
+    marginTop: window.innerWidth <= 768 ? "50px" : "0",
   };
 
   return (
