@@ -1,15 +1,3 @@
-// import React from 'react'
-
-// const ErrorPage = () => {
-//   return (
-//     <div>
-
-//     </div>
-//   )
-// }
-
-// export default ErrorPage
-
 import React from 'react'
 import ErrorImg from '../../assets/Imgs/error=img.svg'
 import { Box, Typography } from '@mui/material'
