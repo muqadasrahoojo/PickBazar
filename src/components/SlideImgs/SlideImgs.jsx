@@ -16,7 +16,7 @@ const ImageSwiper = () => {
 
 
   const swiperStyles = {
-    marginTop: window.innerWidth <= 768 ? "50px" : "0",
+    marginTop: window.innerWidth <= 768 ? "60px" : "0",
   };
 
   return (
@@ -31,7 +31,7 @@ const ImageSwiper = () => {
           768: { slidesPerView: 3 },
           1024: { slidesPerView: 3 },
         }}
-        className="py-4 container-fluid"
+        className="py-4 container-fluid px-2"
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>

@@ -18,21 +18,24 @@ import {
   CardMedia,
   Button,
 } from '@mui/material';
+
 import { useTheme } from '@mui/material/styles';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../Slices/CartSlice';
 import { Icon } from '@iconify/react';
 import fluentFoodApple from '@iconify/icons-fluent/food-apple-20-regular';
 import meatOutline from '@iconify/icons-mdi/meat-outline';
-import { Menu } from '@mui/icons-material';
 import TuneOutlinedIcon from '@mui/icons-material/TuneOutlined';
-
 
 
 const drawerWidth = 240;
 
 const ProductList = ({ selectedCategory }) => {
+  const dispatch = useDispatch();
+
   const allProducts = [
     { id: 1, name: 'Apples', category: 'Fruits & Vegetables', image: 'https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/1/Apples.jpg', price: '$2.50' },
     { id: 2, name: 'Baby Spinach', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F2%2FBabySpinach.jpg&w=1920&q=75', price: '$3.00' },
@@ -67,6 +70,54 @@ const ProductList = ({ selectedCategory }) => {
     { id: 30, name: 'Purina Veterinary Diets', category: 'Pet Care', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F272%2Fpurina_pro_plan.jpg&w=1920&q=75', price: '$8.80' },
   ];
 
+  // const filteredProducts = selectedCategory ? allProducts.filter(product => product.category === selectedCategory) : allProducts;
+
+  // return (
+  //   <div className="mx-5">
+  //     <Grid container spacing={2}>
+  //       {filteredProducts.map((product) => (
+  //         <Grid item xs={12} sm={6} lg={2} key={product.id}>
+  //           <Card>
+  //             <CardMedia
+  //               component="img"
+  //               height="100%"
+  //               image={product.image}
+  //               alt={product.name}
+  //             />
+  //             <CardContent>
+  //               <Typography variant="h6">{product.name}</Typography>
+  //               <Box display="flex" justifyContent="space-between" alignItems="center" mt={2}>
+  //                 <Typography variant="body1" sx={{ color: '#019376', fontWeight: 'bold' }}>
+  //                   {product.price}
+  //                 </Typography>
+  //                 <Button
+  //                   variant="submit"
+  //                   sx={{
+  //                     color: '#019376',
+  //                     border: '1px solid rgb(211, 210, 210)',
+  //                     borderRadius: '16px',
+  //                     gap: '4px',
+  //                     transition: 'all 0.3s ease',
+  //                     '&:hover': {
+  //                       backgroundColor: '#019376',
+  //                       color: 'white',
+  //                     },
+  //                   }}
+  //                   onClick={() => dispatch(addToCart(product))}
+  //                 >
+  //                   <ShoppingBasketIcon style={{ fontSize: '18px' }} /> Cart
+  //                 </Button>
+  //               </Box>
+  //             </CardContent>
+
+  //           </Card>
+  //         </Grid>
+  //       ))}
+  //     </Grid>
+
+
+  //   </div>
+  // );
 
   const filteredProducts = selectedCategory
     ? allProducts.filter((product) => product.category === selectedCategory)
@@ -87,24 +138,25 @@ const ProductList = ({ selectedCategory }) => {
               <CardContent>
                 <Typography variant="h6">{product.name}</Typography>
                 <Box display="flex" justifyContent="space-between" alignItems="center" mt={2}>
-                  <Typography variant="body1" sx={{ color: '#019376', fontWeight: 'bold' }}>
+                  <Typography variant="body1" sx={{ color: "#019376", fontWeight: "bold" }}>
                     {product.price}
                   </Typography>
                   <Button
                     variant="submit"
                     sx={{
-                      color: '#019376',
-                      border: '1px solid rgb(211, 210, 210)',
-                      borderRadius: '16px',
-                      gap: '4px',
-                      transition: 'all 0.3s ease',
-                      '&:hover': {
-                        backgroundColor: '#019376',
-                        color: 'white',
+                      color: "#019376",
+                      border: "1px solid rgb(211, 210, 210)",
+                      borderRadius: "16px",
+                      gap: "4px",
+                      transition: "all 0.3s ease",
+                      "&:hover": {
+                        backgroundColor: "#019376",
+                        color: "white",
                       },
                     }}
+                    onClick={() => dispatch(addToCart(product))}
                   >
-                    <ShoppingBasketIcon style={{ fontSize: '18px' }} /> Cart
+                    <ShoppingBasketIcon style={{ fontSize: "18px" }} /> Cart
                   </Button>
                 </Box>
               </CardContent>
@@ -115,6 +167,11 @@ const ProductList = ({ selectedCategory }) => {
     </div>
   );
 };
+
+
+
+
+
 
 export default function DualDrawerSidebar() {
   const categories = [
@@ -215,16 +272,16 @@ export default function DualDrawerSidebar() {
               onClick={handleMobileDrawerToggle}
               sx={{
                 border: '1px solid #d0d0d0',
-                backgroundColor: '#f9f9f9', 
-                color: '#333', 
-                borderRadius: '4px', 
-                padding: '4px 12px', 
+                backgroundColor: '#f9f9f9',
+                color: '#333',
+                borderRadius: '4px',
+                padding: '4px 12px',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '8px',
                 boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
                 '&:hover': {
-                  backgroundColor: '#e0e0e0', 
+                  backgroundColor: '#e0e0e0',
                 },
               }}
             >
@@ -246,13 +303,13 @@ export default function DualDrawerSidebar() {
             keepMounted: true,
           }}
           sx={{
-          '& .MuiDrawer-paper': {
-            width: drawerWidth,
-            top: '69px',
-            height: `calc(100vh - 64px)`,
-            boxSizing: 'border-box',
-          },
-        }}
+            '& .MuiDrawer-paper': {
+              width: drawerWidth,
+              top: '69px',
+              height: `calc(100vh - 64px)`,
+              boxSizing: 'border-box',
+            },
+          }}
         >
           {drawerContent}
         </Drawer>
