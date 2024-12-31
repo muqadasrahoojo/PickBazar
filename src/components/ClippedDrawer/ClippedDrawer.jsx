@@ -17,6 +17,10 @@ import {
   CardContent,
   CardMedia,
   Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
 } from '@mui/material';
 
 import { useTheme } from '@mui/material/styles';
@@ -33,8 +37,162 @@ import TuneOutlinedIcon from '@mui/icons-material/TuneOutlined';
 
 const drawerWidth = 240;
 
+// const ProductList = ({ selectedCategory }) => {
+//   const dispatch = useDispatch();
+
+  // const allProducts = [
+  //   { id: 1, name: 'Apples', category: 'Fruits & Vegetables', image: 'https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/1/Apples.jpg', price: '$2.50' },
+  //   { id: 2, name: 'Baby Spinach', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F2%2FBabySpinach.jpg&w=1920&q=75', price: '$3.00' },
+  //   { id: 3, name: 'Blueberries', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F3%2Fblueberries.jpg&w=1920&q=75', price: '$4.20' },
+  //   { id: 4, name: 'Brussels Sprouts', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F4%2FBrusselsSprouts.jpg&w=1920&q=75', price: '$5.50' },
+  //   // { id: 5, name: 'Clementines', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F6%2Fclementines.jpg&w=1920&q=75', price: '$3.80' },
+  //   { id: 5, name: 'Clementines', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F6%2Fclementines.jpg&w=1920&q=75', price: '$3.80' },
+  //   { id: 6, name: 'Corn', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F7%2FCorn.jpg&w=1920&q=75', price: '$2.30' },
+  //   { id: 7, name: 'Cucumber', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F8%2FCucumber.jpg&w=1920&q=75', price: '$2.50' },
+  //   { id: 8, name: 'Dates', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F10%2FDates.jpg&w=1920&q=75', price: '$6.20' },
+  //   { id: 9, name: 'French Green Beans', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F11%2FFrenchGreenBeans.jpg&w=1920&q=75', price: '$4.00' },
+  //   { id: 10, name: 'Green Beans', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F12%2FGreenBeans.jpg&w=1920&q=75', price: '$4.50' },
+  //   { id: 11, name: 'Green Limes', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F13%2FGreenLimes.jpg&w=1920&q=75', price: '$3.90' },
+  //   { id: 12, name: 'Mangoes', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F14%2FMangoes.jpg&w=1920&q=75', price: '$7.00' },
+  //   { id: 13, name: 'Mini Peppers', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F15%2FMiniPeppers.jpg&w=1920&q=75', price: '$5.60' },
+  //   { id: 14, name: 'Pears', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F16%2Fpears.jpg&w=1920&q=75', price: '$3.00' },
+  //   { id: 15, name: 'Peeled Carrots', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F17%2FPeeled-Carrots.jpg&w=1920&q=75', price: '$9.80' },
+  //   { id: 16, name: 'Belmont Cream', category: 'Snacks', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F199%2Fkhong_guan_orange_cream.jpg&w=1920&q=75', price: '$8.80' },
+  //   { id: 17, name: 'Avo Derm Grain Free', category: 'Pet Care', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F266%2Fgrain_free.jpg&w=1920&q=75', price: '$2.80' },
+  //   { id: 18, name: 'Hills Science Diet', category: 'Pet Care', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F268%2Finstinct_the_raw.jpg&w=1920&q=75', price: '$2.8' },
+  //   { id: 19, name: 'Hill Mini Pack Mix', category: 'Snacks', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F196%2FHill_Biscuits_Mini_Pack_Mix_.jpg&w=1920&q=75', price: '$8.45' },
+  //   { id: 20, name: 'Khong Guan Marie', category: 'Snacks', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F200%2Fkhong_guan_premium_marie.jpg&w=1920&q=75', price: '$9.80' },
+  //   { id: 21, name: 'Avo Derm Grain Free', category: 'Pet Care', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F266%2Fgrain_free.jpg&w=1920&q=75', price: '$6.80' },
+  //   { id: 22, name: 'Hills Science Diet', category: 'Pet Care', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F268%2Finstinct_the_raw.jpg&w=1920&q=75', price: '$6.80' },
+  //   { id: 23, name: 'Pro Diet Balance', category: 'Pet Care', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F271%2Fpro_diet.jpg&w=1920&q=75', price: '$5.80' },
+  //   { id: 24, name: 'Fish', category: 'Meat & Fish', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F183%2FSignatureSalmon_fstp4m.jpg&w=1920&q=75', price: '$2.80' },
+  //   { id: 25, name: 'Signature Salmon', category: 'Meat & Fish', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F184%2Fcodfillet_u0mti1.jpg&w=1920&q=75', price: '$8.80' },
+  //   { id: 26, name: 'Cod Fillet', category: 'Meat & Fish', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F185%2Fswordfish_smniuv.jpg&w=1920&q=75', price: '$5.80' },
+  //   { id: 27, name: 'Barney Butter', category: 'Dairy', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F305%2Fbutter_barney.jpg&w=1920&q=75', price: '$7.80' },
+  //   { id: 28, name: 'Kirkland Signature', category: 'Dairy', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F306%2Fbutter_kirkland.jpg&w=1920&q=75', price: '$8.80' },
+  //   { id: 29, name: 'Nikki S Milk', category: 'Dairy', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F322%2Fmilk_living_planet.jpg&w=1920&q=75', price: '$3.80' },
+  //   { id: 30, name: 'Purina Veterinary Diets', category: 'Pet Care', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F272%2Fpurina_pro_plan.jpg&w=1920&q=75', price: '$8.80' },
+  // ];
+
+//   // const filteredProducts = selectedCategory ? allProducts.filter(product => product.category === selectedCategory) : allProducts;
+
+//   // return (
+//   //   <div className="mx-5">
+//   //     <Grid container spacing={2}>
+//   //       {filteredProducts.map((product) => (
+//   //         <Grid item xs={12} sm={6} lg={2} key={product.id}>
+//   //           <Card>
+//   //             <CardMedia
+//   //               component="img"
+//   //               height="100%"
+//   //               image={product.image}
+//   //               alt={product.name}
+//   //             />
+//   //             <CardContent>
+//   //               <Typography variant="h6">{product.name}</Typography>
+//   //               <Box display="flex" justifyContent="space-between" alignItems="center" mt={2}>
+//   //                 <Typography variant="body1" sx={{ color: '#019376', fontWeight: 'bold' }}>
+//   //                   {product.price}
+//   //                 </Typography>
+//   //                 <Button
+//   //                   variant="submit"
+//   //                   sx={{
+//   //                     color: '#019376',
+//   //                     border: '1px solid rgb(211, 210, 210)',
+//   //                     borderRadius: '16px',
+//   //                     gap: '4px',
+//   //                     transition: 'all 0.3s ease',
+//   //                     '&:hover': {
+//   //                       backgroundColor: '#019376',
+//   //                       color: 'white',
+//   //                     },
+//   //                   }}
+//   //                   onClick={() => dispatch(addToCart(product))}
+//   //                 >
+//   //                   <ShoppingBasketIcon style={{ fontSize: '18px' }} /> Cart
+//   //                 </Button>
+//   //               </Box>
+//   //             </CardContent>
+
+//   //           </Card>
+//   //         </Grid>
+//   //       ))}
+//   //     </Grid>
+
+
+//   //   </div>
+//   // );
+
+//   const filteredProducts = selectedCategory
+//     ? allProducts.filter((product) => product.category === selectedCategory)
+//     : allProducts;
+
+//   return (
+//     <div className="mx-5">
+//       <Grid container spacing={2}>
+//         {filteredProducts.map((product) => (
+//           <Grid item xs={12} sm={6} lg={2} key={product.id}>
+//             <Card>
+//               <CardMedia
+//                 component="img"
+//                 height="100%"
+//                 image={product.image}
+//                 alt={product.name}
+//               />
+//               <CardContent>
+//                 <Typography variant="h6">{product.name}</Typography>
+//                 <Box display="flex" justifyContent="space-between" alignItems="center" mt={2}>
+//                   <Typography variant="body1" sx={{ color: "#019376", fontWeight: "bold" }}>
+//                     {product.price}
+//                   </Typography>
+//                   <Button
+//                     variant="submit"
+//                     sx={{
+//                       color: "#019376",
+//                       border: "1px solid rgb(211, 210, 210)",
+//                       borderRadius: "16px",
+//                       gap: "4px",
+//                       transition: "all 0.3s ease",
+//                       "&:hover": {
+//                         backgroundColor: "#019376",
+//                         color: "white",
+//                       },
+//                     }}
+//                     onClick={() => dispatch(addToCart(product))}
+//                   >
+//                     <ShoppingBasketIcon style={{ fontSize: "18px" }} /> Cart
+//                   </Button>
+//                 </Box>
+//               </CardContent>
+//             </Card>
+//           </Grid>
+//         ))}
+//       </Grid>
+//     </div>
+//   );
+// };
+
+
+
+// import React, { useState } from 'react';
+// import {
+//   Box,
+
+//   Button,
+//   Typography,
+//   Card,
+//   CardContent,
+//   CardMedia,
+//   Grid
+// } from '@mui/material';
+// import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+// import { useDispatch } from 'react-redux';
+// import { addToCart } from '../../Slices/CartSlice';
+
 const ProductList = ({ selectedCategory }) => {
   const dispatch = useDispatch();
+  const [openModal, setOpenModal] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   const allProducts = [
     { id: 1, name: 'Apples', category: 'Fruits & Vegetables', image: 'https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/1/Apples.jpg', price: '$2.50' },
@@ -70,54 +228,20 @@ const ProductList = ({ selectedCategory }) => {
     { id: 30, name: 'Purina Veterinary Diets', category: 'Pet Care', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F272%2Fpurina_pro_plan.jpg&w=1920&q=75', price: '$8.80' },
   ];
 
-  // const filteredProducts = selectedCategory ? allProducts.filter(product => product.category === selectedCategory) : allProducts;
 
-  // return (
-  //   <div className="mx-5">
-  //     <Grid container spacing={2}>
-  //       {filteredProducts.map((product) => (
-  //         <Grid item xs={12} sm={6} lg={2} key={product.id}>
-  //           <Card>
-  //             <CardMedia
-  //               component="img"
-  //               height="100%"
-  //               image={product.image}
-  //               alt={product.name}
-  //             />
-  //             <CardContent>
-  //               <Typography variant="h6">{product.name}</Typography>
-  //               <Box display="flex" justifyContent="space-between" alignItems="center" mt={2}>
-  //                 <Typography variant="body1" sx={{ color: '#019376', fontWeight: 'bold' }}>
-  //                   {product.price}
-  //                 </Typography>
-  //                 <Button
-  //                   variant="submit"
-  //                   sx={{
-  //                     color: '#019376',
-  //                     border: '1px solid rgb(211, 210, 210)',
-  //                     borderRadius: '16px',
-  //                     gap: '4px',
-  //                     transition: 'all 0.3s ease',
-  //                     '&:hover': {
-  //                       backgroundColor: '#019376',
-  //                       color: 'white',
-  //                     },
-  //                   }}
-  //                   onClick={() => dispatch(addToCart(product))}
-  //                 >
-  //                   <ShoppingBasketIcon style={{ fontSize: '18px' }} /> Cart
-  //                 </Button>
-  //               </Box>
-  //             </CardContent>
+  const handleCardClick = (product) => {
+    setSelectedProduct(product);
+    setOpenModal(true);
+  };
 
-  //           </Card>
-  //         </Grid>
-  //       ))}
-  //     </Grid>
+  const handleCloseModal = () => {
+    setOpenModal(false);
+  };
 
-
-  //   </div>
-  // );
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+    setOpenModal(false);
+  };
 
   const filteredProducts = selectedCategory
     ? allProducts.filter((product) => product.category === selectedCategory)
@@ -134,29 +258,31 @@ const ProductList = ({ selectedCategory }) => {
                 height="100%"
                 image={product.image}
                 alt={product.name}
+                onClick={() => handleCardClick(product)}
+                style={{ cursor: 'pointer' }}
               />
               <CardContent>
                 <Typography variant="h6">{product.name}</Typography>
                 <Box display="flex" justifyContent="space-between" alignItems="center" mt={2}>
-                  <Typography variant="body1" sx={{ color: "#019376", fontWeight: "bold" }}>
+                  <Typography variant="body1" sx={{ color: '#019376', fontWeight: 'bold' }}>
                     {product.price}
                   </Typography>
                   <Button
                     variant="submit"
                     sx={{
-                      color: "#019376",
-                      border: "1px solid rgb(211, 210, 210)",
-                      borderRadius: "16px",
-                      gap: "4px",
-                      transition: "all 0.3s ease",
-                      "&:hover": {
-                        backgroundColor: "#019376",
-                        color: "white",
+                      color: '#019376',
+                      border: '1px solid rgb(211, 210, 210)',
+                      borderRadius: '16px',
+                      gap: '4px',
+                      transition: 'all 0.3s ease',
+                      '&:hover': {
+                        backgroundColor: '#019376',
+                        color: 'white',
                       },
                     }}
                     onClick={() => dispatch(addToCart(product))}
                   >
-                    <ShoppingBasketIcon style={{ fontSize: "18px" }} /> Cart
+                    <ShoppingBasketIcon style={{ fontSize: '18px' }} /> Cart
                   </Button>
                 </Box>
               </CardContent>
@@ -164,10 +290,49 @@ const ProductList = ({ selectedCategory }) => {
           </Grid>
         ))}
       </Grid>
+
+      {/* Dialog for product details */}
+      <Dialog open={openModal} onClose={handleCloseModal} fullWidth maxWidth="lg">
+        <DialogTitle>{selectedProduct?.name}</DialogTitle>
+        <DialogContent>
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={6}>
+              <img src={selectedProduct?.image} alt={selectedProduct?.name} style={{ width: '100%', height: 'auto' }} />
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Typography variant="h6" gutterBottom>
+                Price: {selectedProduct?.price}
+              </Typography>
+              <Typography variant="body1" gutterBottom>
+                {selectedProduct?.description}
+              </Typography>
+              <Button
+                variant="contained"
+                color="primary"
+                fullWidth
+                onClick={() => handleAddToCart(selectedProduct)}
+                sx={{
+                  marginTop: '16px',
+                  backgroundColor: '#019376',
+                  '&:hover': {
+                    backgroundColor: '#016c4f',
+                  },
+                }}
+              >
+                <ShoppingBasketIcon style={{ fontSize: '18px' }} /> Add to Cart
+              </Button>
+            </Grid>
+          </Grid>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseModal} color="primary">
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 };
-
 
 
 
