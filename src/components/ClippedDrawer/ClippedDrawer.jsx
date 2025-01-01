@@ -164,11 +164,11 @@ const ProductList = ({ selectedCategory }) => {
         {filteredProducts.map((product) => (
           <Grid
             item
-            xs={12}  
-            sm={6}  
-            md={4}  
-            lg={3}   
-            xl={2}   
+            xs={12}
+            sm={6}
+            md={4}
+            lg={3}
+            xl={2}
             key={product.id}
           >
             <Card>
@@ -320,7 +320,20 @@ export default function DualDrawerSidebar() {
     <List>
       {categories.map((category) => (
         <div key={category.name}>
-          <ListItem button onClick={() => handleClick(category.name)}>
+          <ListItem
+            button
+            onClick={() => handleClick(category.name)}
+            sx={{
+              color: openCategory === category.name ? '#019376' : 'inherit',
+              backgroundColor: 'transparent',
+              '&:hover': {
+                backgroundColor: 'transparent', 
+              },
+              '& .MuiListItemIcon-root': {
+                color: openCategory === category.name ? '#019376' : 'inherit',
+              },
+            }}
+          >
             <ListItemIcon>{category.icon}</ListItemIcon>
             <ListItemText primary={category.name} />
             {openCategory === category.name ? <ExpandLess /> : <ExpandMore />}
@@ -337,6 +350,7 @@ export default function DualDrawerSidebar() {
         </div>
       ))}
     </List>
+
   );
 
   return (
