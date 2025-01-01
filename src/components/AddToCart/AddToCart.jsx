@@ -74,7 +74,7 @@ const AddToCart = () => {
         onClose={() => setOpen(false)}
         sx={{
           '& .MuiDrawer-paper': {
-            width: '500px',
+            width: '390px',
             padding: '20px',
             display: 'flex',
             flexDirection: 'column',
@@ -102,7 +102,7 @@ const AddToCart = () => {
           <CloseIcon />
         </IconButton>
 
-        <Box sx={{ width: '100%', textAlign: 'center', flex: 1, marginTop:'50%',  }}>
+        <Box sx={{ width: '100%', textAlign: 'center', flex: 1, }}>
           {cart.length > 0 ? (
             <>
               <Typography variant="h6" sx={{ marginBottom: '20px' }}>
@@ -116,40 +116,49 @@ const AddToCart = () => {
                       primary={item.name}
                       secondary={`$${(parseFloat(item.price.replace('$', '')) * (item.quantity || 1)).toFixed(2)}`}
                     />
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                      <Button 
-                        onClick={() => handleQuantityChange(item.id, -1)} 
-                        disabled={item.quantity === 1}
-                        sx={{
-                          backgroundColor: '#019376',
-                          color: '#fff',
-                          padding: '5px 10px',
-                          '&:hover': {
-                            backgroundColor: '#017263',
-                          },
-                        }}
-                      >
-                        -
-                      </Button>
-                      <Typography variant="body2" sx={{ margin: '0 10px' }}>
-                        {item.quantity || 1}
-                      </Typography>
-                      <Button 
+
+                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
+                     
+                      <Button
                         onClick={() => handleQuantityChange(item.id, 1)}
                         sx={{
-                          backgroundColor: '#019376',
-                          color: '#fff',
+                          backgroundColor: 'transparent',
+                          color: '#019376',
                           padding: '5px 10px',
                           '&:hover': {
                             backgroundColor: '#017263',
+                            color: '#fff',
                           },
+                          minWidth: '30px',
+                          height: '30px',
                         }}
                       >
                         +
                       </Button>
+                      <Typography variant="body2" sx={{ margin: '0 10px' }}>
+                        {item.quantity || 1}
+                      </Typography>
+                       <Button
+                        onClick={() => handleQuantityChange(item.id, -1)}
+                        disabled={item.quantity === 1}
+                        sx={{
+                          backgroundColor: 'transparent',
+                          color: '#019376',
+                          padding: '5px 10px',
+                          '&:hover': {
+                            backgroundColor: '#017263',
+                            color: '#fff',
+                          },
+                          minWidth: '30px',
+                          height: '30px',
+                        }}
+                      >
+                        -
+                      </Button>
                     </Box>
-                    <Button 
-                      onClick={() => dispatch(removeFromCart(item.id))} 
+
+                    <Button
+                      onClick={() => dispatch(removeFromCart(item.id))}
                       sx={{
                         backgroundColor: '#e57373',
                         color: '#fff',
@@ -236,3 +245,4 @@ const AddToCart = () => {
 };
 
 export default AddToCart;
+
