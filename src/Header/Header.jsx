@@ -87,30 +87,32 @@ export default function Header() {
   };
 
   return (
+
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
-        className="sticky-appbar"
-
+        // className="sticky-appbar"
         sx={{
+          position: "fixed", 
           top: 0,
-          zIndex: 1300, 
+          left: 0,
+          right: 0,
+          zIndex: 1301, 
           backgroundColor: "#FAFAFA",
           color: "#000",
           boxShadow: "none",
         }}
-      >
-        <Toolbar>
-          
+      > <Toolbar>
+
           <Typography
             variant="h6"
             noWrap
             component="div"
-            
+
           >
             <img src={Logo} alt="Logo" style={{ height: "30px" }} />
           </Typography>
 
-          <FormControl sx={{ m: 1, width: 160, ml: 1 , marginLeft: '30px', display: { xs: "none", sm: "block" }  }}>
+          <FormControl sx={{ m: 1, width: 160, ml: 1, marginLeft: '30px', display: { xs: "none", sm: "block" } }}>
             <Select
               multiple
               displayEmpty
@@ -123,10 +125,10 @@ export default function Header() {
                     <Typography
                       component="em"
                       sx={{
-                        color: "#019376", 
+                        color: "#019376",
                         display: "flex",
                         alignItems: "center",
-                        
+
                       }}
                     >
                       <Icon
@@ -145,19 +147,19 @@ export default function Header() {
               inputProps={{ "aria-label": "Without label" }}
               sx={{
                 height: "38px",
-                color: "#019376", 
+                color: "#019376",
                 "& .MuiOutlinedInput-root": {
                   padding: "4px 3px",
                 },
                 "& .MuiSelect-icon": {
-                  color: "#019376", 
+                  color: "#019376",
                 },
                 "& .MuiSelect-filled": {
-                  backgroundColor: "transparent", 
+                  backgroundColor: "transparent",
                 },
                 "&:hover": {
                   "& .MuiOutlinedInput-notchedOutline": {
-                    borderColor: "#019376", 
+                    borderColor: "#019376",
                   },
                 },
               }}
@@ -167,7 +169,7 @@ export default function Header() {
                   key={name}
                   value={name}
                   style={{
-                    color: "#019376", 
+                    color: "#019376",
                   }}
                 >
                   {name}
@@ -232,9 +234,9 @@ export default function Header() {
                 Join
               </Typography>
             </Button>
-      
+
           </Box>
-       
+
         </Toolbar>
       </AppBar>
 

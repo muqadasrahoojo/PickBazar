@@ -33,161 +33,58 @@ import { Icon } from '@iconify/react';
 import fluentFoodApple from '@iconify/icons-fluent/food-apple-20-regular';
 import meatOutline from '@iconify/icons-mdi/meat-outline';
 import TuneOutlinedIcon from '@mui/icons-material/TuneOutlined';
+import CloseIcon from '@mui/icons-material/Close';
+import Apples from '../../assets/Imgs/Apples.webp';
+import BabySpinach from '../../assets/Imgs/BabySpinach.webp';
+import BrusselsSprouts from '../../assets/Imgs/BrusselsSprouts.webp';
+import CelerySticks from '../../assets/Imgs/CelerySticks.webp';
+import Cucumber from '../../assets/Imgs/Cucumber.webp';
+import Dates from '../../assets/Imgs/Dates.webp';
+import Everyday_Essentials_Wholemeal_Bread from '../../assets/Imgs/Everyday_Essentials_Wholemeal_Bread.webp';
+import Farmhouse_Multigrain_Batch_loaf_purple_pack from '../../assets/Imgs/Farmhouse_Multigrain_Batch_loaf_purple_pack.webp';
+import FrenchGreenBeans from '../../assets/Imgs/FrenchGreenBeans.webp';
+import GreenBeans from '../../assets/Imgs/GreenBeans.webp';
+import Mangoes from '../../assets/Imgs/Mangoes.webp';
+import MiniPeppers from '../../assets/Imgs/MiniPeppers.webp';
+import Pears from '../../assets/Imgs/pears.webp';
+import PeeledCarrots from '../../assets/Imgs/Peeled-Carrots.webp';
+import BelmontCream from '../../assets/Imgs/belmont_custard_cream.webp';
+import AvoDermGrainFree from '../../assets/Imgs/grain_free.webp';
+import HillsScienceDiet from '../../assets/Imgs/hills_science_diet.webp';
+import HillMiniPackMix from '../../assets/Imgs/Hill_Biscuits_Mini_Pack_Mix_.webp';
+import KhongGuanMarie from '../../assets/Imgs/khong_guan_orange_cream.webp';
+import instinct_the_raw from '../../assets/Imgs/instinct_the_raw.webp';
+import ProDietBalance from '../../assets/Imgs/pro_diet.webp';
+import SignatureSalmon_fstp4m from '../../assets/Imgs/SignatureSalmon_fstp4m.webp';
+import codfillet_u0mti1 from '../../assets/Imgs/codfillet_u0mti1.webp';
+import butter_barney from '../../assets/Imgs/butter_barney.webp';
+import butter_kirkland from '../../assets/Imgs/butter_kirkland.webp';
+import milk_cream_nammilk from '../../assets/Imgs/milk_cream_nammilk.webp';
+import purina_pro_plan from '../../assets/Imgs/purina_pro_plan.webp';
+import Fish from '../../assets/Imgs/TilapiaFillet_a2urhk.webp';
+import Clementines from '../../assets/Imgs/clementines.webp';
+import air_freshner_acana_ozmo from '../../assets/Imgs/air_freshner_acana_ozmo.webp';
+import air_freshner_air_wick_essential_oils from '../../assets/Imgs/air_freshner_air_wick_essential_oils.webp';
+import air_freshner_ambipur_air_sweet_citrus from '../../assets/Imgs/air_freshner_ambipur_air_sweet_citrus&zest.webp';
+import oil_clover from '../../assets/Imgs/oil_clover_valley.webp';
+import oil_san from '../../assets/Imgs/oil_san_lucas.webp';
+import chefa_choice_bamboo_rice from '../../assets/Imgs/chefa_choice_bamboo_rice.webp';
+import _Seeded_Bloomer from '../../assets/Imgs/roberts_Seriously_Seeded_Bloomer.webp';
+import gnc_aloe_vera_moisturizing_cream from '../../assets/Imgs/gnc_aloe_vera_moisturizing_cream.webp';
+import bubble_bath from '../../assets/Imgs/attitude_night_bubble_bath.webp';
+import eo_lotion from '../../assets/Imgs/eo_body_lotion.webp';
+import javarama_classic from '../../assets/Imgs/javarama_classic.webp';
+import starbucks_house_blend from '../../assets/Imgs/starbucks_house_blend.webp';
+import starbucks_vanilla_latte from '../../assets/Imgs/starbucks_vanilla_latte.webp';
+import instincttheraw from '../../assets/Imgs/instinct_the_raw.webp';
+
+
+
+
+
 
 
 const drawerWidth = 240;
-
-// const ProductList = ({ selectedCategory }) => {
-//   const dispatch = useDispatch();
-
-  // const allProducts = [
-  //   { id: 1, name: 'Apples', category: 'Fruits & Vegetables', image: 'https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/1/Apples.jpg', price: '$2.50' },
-  //   { id: 2, name: 'Baby Spinach', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F2%2FBabySpinach.jpg&w=1920&q=75', price: '$3.00' },
-  //   { id: 3, name: 'Blueberries', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F3%2Fblueberries.jpg&w=1920&q=75', price: '$4.20' },
-  //   { id: 4, name: 'Brussels Sprouts', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F4%2FBrusselsSprouts.jpg&w=1920&q=75', price: '$5.50' },
-  //   // { id: 5, name: 'Clementines', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F6%2Fclementines.jpg&w=1920&q=75', price: '$3.80' },
-  //   { id: 5, name: 'Clementines', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F6%2Fclementines.jpg&w=1920&q=75', price: '$3.80' },
-  //   { id: 6, name: 'Corn', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F7%2FCorn.jpg&w=1920&q=75', price: '$2.30' },
-  //   { id: 7, name: 'Cucumber', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F8%2FCucumber.jpg&w=1920&q=75', price: '$2.50' },
-  //   { id: 8, name: 'Dates', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F10%2FDates.jpg&w=1920&q=75', price: '$6.20' },
-  //   { id: 9, name: 'French Green Beans', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F11%2FFrenchGreenBeans.jpg&w=1920&q=75', price: '$4.00' },
-  //   { id: 10, name: 'Green Beans', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F12%2FGreenBeans.jpg&w=1920&q=75', price: '$4.50' },
-  //   { id: 11, name: 'Green Limes', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F13%2FGreenLimes.jpg&w=1920&q=75', price: '$3.90' },
-  //   { id: 12, name: 'Mangoes', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F14%2FMangoes.jpg&w=1920&q=75', price: '$7.00' },
-  //   { id: 13, name: 'Mini Peppers', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F15%2FMiniPeppers.jpg&w=1920&q=75', price: '$5.60' },
-  //   { id: 14, name: 'Pears', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F16%2Fpears.jpg&w=1920&q=75', price: '$3.00' },
-  //   { id: 15, name: 'Peeled Carrots', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F17%2FPeeled-Carrots.jpg&w=1920&q=75', price: '$9.80' },
-  //   { id: 16, name: 'Belmont Cream', category: 'Snacks', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F199%2Fkhong_guan_orange_cream.jpg&w=1920&q=75', price: '$8.80' },
-  //   { id: 17, name: 'Avo Derm Grain Free', category: 'Pet Care', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F266%2Fgrain_free.jpg&w=1920&q=75', price: '$2.80' },
-  //   { id: 18, name: 'Hills Science Diet', category: 'Pet Care', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F268%2Finstinct_the_raw.jpg&w=1920&q=75', price: '$2.8' },
-  //   { id: 19, name: 'Hill Mini Pack Mix', category: 'Snacks', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F196%2FHill_Biscuits_Mini_Pack_Mix_.jpg&w=1920&q=75', price: '$8.45' },
-  //   { id: 20, name: 'Khong Guan Marie', category: 'Snacks', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F200%2Fkhong_guan_premium_marie.jpg&w=1920&q=75', price: '$9.80' },
-  //   { id: 21, name: 'Avo Derm Grain Free', category: 'Pet Care', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F266%2Fgrain_free.jpg&w=1920&q=75', price: '$6.80' },
-  //   { id: 22, name: 'Hills Science Diet', category: 'Pet Care', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F268%2Finstinct_the_raw.jpg&w=1920&q=75', price: '$6.80' },
-  //   { id: 23, name: 'Pro Diet Balance', category: 'Pet Care', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F271%2Fpro_diet.jpg&w=1920&q=75', price: '$5.80' },
-  //   { id: 24, name: 'Fish', category: 'Meat & Fish', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F183%2FSignatureSalmon_fstp4m.jpg&w=1920&q=75', price: '$2.80' },
-  //   { id: 25, name: 'Signature Salmon', category: 'Meat & Fish', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F184%2Fcodfillet_u0mti1.jpg&w=1920&q=75', price: '$8.80' },
-  //   { id: 26, name: 'Cod Fillet', category: 'Meat & Fish', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F185%2Fswordfish_smniuv.jpg&w=1920&q=75', price: '$5.80' },
-  //   { id: 27, name: 'Barney Butter', category: 'Dairy', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F305%2Fbutter_barney.jpg&w=1920&q=75', price: '$7.80' },
-  //   { id: 28, name: 'Kirkland Signature', category: 'Dairy', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F306%2Fbutter_kirkland.jpg&w=1920&q=75', price: '$8.80' },
-  //   { id: 29, name: 'Nikki S Milk', category: 'Dairy', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F322%2Fmilk_living_planet.jpg&w=1920&q=75', price: '$3.80' },
-  //   { id: 30, name: 'Purina Veterinary Diets', category: 'Pet Care', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F272%2Fpurina_pro_plan.jpg&w=1920&q=75', price: '$8.80' },
-  // ];
-
-//   // const filteredProducts = selectedCategory ? allProducts.filter(product => product.category === selectedCategory) : allProducts;
-
-//   // return (
-//   //   <div className="mx-5">
-//   //     <Grid container spacing={2}>
-//   //       {filteredProducts.map((product) => (
-//   //         <Grid item xs={12} sm={6} lg={2} key={product.id}>
-//   //           <Card>
-//   //             <CardMedia
-//   //               component="img"
-//   //               height="100%"
-//   //               image={product.image}
-//   //               alt={product.name}
-//   //             />
-//   //             <CardContent>
-//   //               <Typography variant="h6">{product.name}</Typography>
-//   //               <Box display="flex" justifyContent="space-between" alignItems="center" mt={2}>
-//   //                 <Typography variant="body1" sx={{ color: '#019376', fontWeight: 'bold' }}>
-//   //                   {product.price}
-//   //                 </Typography>
-//   //                 <Button
-//   //                   variant="submit"
-//   //                   sx={{
-//   //                     color: '#019376',
-//   //                     border: '1px solid rgb(211, 210, 210)',
-//   //                     borderRadius: '16px',
-//   //                     gap: '4px',
-//   //                     transition: 'all 0.3s ease',
-//   //                     '&:hover': {
-//   //                       backgroundColor: '#019376',
-//   //                       color: 'white',
-//   //                     },
-//   //                   }}
-//   //                   onClick={() => dispatch(addToCart(product))}
-//   //                 >
-//   //                   <ShoppingBasketIcon style={{ fontSize: '18px' }} /> Cart
-//   //                 </Button>
-//   //               </Box>
-//   //             </CardContent>
-
-//   //           </Card>
-//   //         </Grid>
-//   //       ))}
-//   //     </Grid>
-
-
-//   //   </div>
-//   // );
-
-//   const filteredProducts = selectedCategory
-//     ? allProducts.filter((product) => product.category === selectedCategory)
-//     : allProducts;
-
-//   return (
-//     <div className="mx-5">
-//       <Grid container spacing={2}>
-//         {filteredProducts.map((product) => (
-//           <Grid item xs={12} sm={6} lg={2} key={product.id}>
-//             <Card>
-//               <CardMedia
-//                 component="img"
-//                 height="100%"
-//                 image={product.image}
-//                 alt={product.name}
-//               />
-//               <CardContent>
-//                 <Typography variant="h6">{product.name}</Typography>
-//                 <Box display="flex" justifyContent="space-between" alignItems="center" mt={2}>
-//                   <Typography variant="body1" sx={{ color: "#019376", fontWeight: "bold" }}>
-//                     {product.price}
-//                   </Typography>
-//                   <Button
-//                     variant="submit"
-//                     sx={{
-//                       color: "#019376",
-//                       border: "1px solid rgb(211, 210, 210)",
-//                       borderRadius: "16px",
-//                       gap: "4px",
-//                       transition: "all 0.3s ease",
-//                       "&:hover": {
-//                         backgroundColor: "#019376",
-//                         color: "white",
-//                       },
-//                     }}
-//                     onClick={() => dispatch(addToCart(product))}
-//                   >
-//                     <ShoppingBasketIcon style={{ fontSize: "18px" }} /> Cart
-//                   </Button>
-//                 </Box>
-//               </CardContent>
-//             </Card>
-//           </Grid>
-//         ))}
-//       </Grid>
-//     </div>
-//   );
-// };
-
-
-
-// import React, { useState } from 'react';
-// import {
-//   Box,
-
-//   Button,
-//   Typography,
-//   Card,
-//   CardContent,
-//   CardMedia,
-//   Grid
-// } from '@mui/material';
-// import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
-// import { useDispatch } from 'react-redux';
-// import { addToCart } from '../../Slices/CartSlice';
 
 const ProductList = ({ selectedCategory }) => {
   const dispatch = useDispatch();
@@ -195,37 +92,50 @@ const ProductList = ({ selectedCategory }) => {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   const allProducts = [
-    { id: 1, name: 'Apples', category: 'Fruits & Vegetables', image: 'https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/1/Apples.jpg', price: '$2.50' },
-    { id: 2, name: 'Baby Spinach', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F2%2FBabySpinach.jpg&w=1920&q=75', price: '$3.00' },
-    { id: 3, name: 'Blueberries', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F3%2Fblueberries.jpg&w=1920&q=75', price: '$4.20' },
-    { id: 4, name: 'Brussels Sprouts', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F4%2FBrusselsSprouts.jpg&w=1920&q=75', price: '$5.50' },
-    // { id: 5, name: 'Clementines', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F6%2Fclementines.jpg&w=1920&q=75', price: '$3.80' },
-    { id: 5, name: 'Clementines', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F6%2Fclementines.jpg&w=1920&q=75', price: '$3.80' },
-    { id: 6, name: 'Corn', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F7%2FCorn.jpg&w=1920&q=75', price: '$2.30' },
-    { id: 7, name: 'Cucumber', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F8%2FCucumber.jpg&w=1920&q=75', price: '$2.50' },
-    { id: 8, name: 'Dates', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F10%2FDates.jpg&w=1920&q=75', price: '$6.20' },
-    { id: 9, name: 'French Green Beans', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F11%2FFrenchGreenBeans.jpg&w=1920&q=75', price: '$4.00' },
-    { id: 10, name: 'Green Beans', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F12%2FGreenBeans.jpg&w=1920&q=75', price: '$4.50' },
-    { id: 11, name: 'Green Limes', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F13%2FGreenLimes.jpg&w=1920&q=75', price: '$3.90' },
-    { id: 12, name: 'Mangoes', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F14%2FMangoes.jpg&w=1920&q=75', price: '$7.00' },
-    { id: 13, name: 'Mini Peppers', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F15%2FMiniPeppers.jpg&w=1920&q=75', price: '$5.60' },
-    { id: 14, name: 'Pears', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F16%2Fpears.jpg&w=1920&q=75', price: '$3.00' },
-    { id: 15, name: 'Peeled Carrots', category: 'Fruits & Vegetables', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F17%2FPeeled-Carrots.jpg&w=1920&q=75', price: '$9.80' },
-    { id: 16, name: 'Belmont Cream', category: 'Snacks', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F199%2Fkhong_guan_orange_cream.jpg&w=1920&q=75', price: '$8.80' },
-    { id: 17, name: 'Avo Derm Grain Free', category: 'Pet Care', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F266%2Fgrain_free.jpg&w=1920&q=75', price: '$2.80' },
-    { id: 18, name: 'Hills Science Diet', category: 'Pet Care', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F268%2Finstinct_the_raw.jpg&w=1920&q=75', price: '$2.8' },
-    { id: 19, name: 'Hill Mini Pack Mix', category: 'Snacks', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F196%2FHill_Biscuits_Mini_Pack_Mix_.jpg&w=1920&q=75', price: '$8.45' },
-    { id: 20, name: 'Khong Guan Marie', category: 'Snacks', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F200%2Fkhong_guan_premium_marie.jpg&w=1920&q=75', price: '$9.80' },
-    { id: 21, name: 'Avo Derm Grain Free', category: 'Pet Care', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F266%2Fgrain_free.jpg&w=1920&q=75', price: '$6.80' },
-    { id: 22, name: 'Hills Science Diet', category: 'Pet Care', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F268%2Finstinct_the_raw.jpg&w=1920&q=75', price: '$6.80' },
-    { id: 23, name: 'Pro Diet Balance', category: 'Pet Care', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F271%2Fpro_diet.jpg&w=1920&q=75', price: '$5.80' },
-    { id: 24, name: 'Fish', category: 'Meat & Fish', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F183%2FSignatureSalmon_fstp4m.jpg&w=1920&q=75', price: '$2.80' },
-    { id: 25, name: 'Signature Salmon', category: 'Meat & Fish', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F184%2Fcodfillet_u0mti1.jpg&w=1920&q=75', price: '$8.80' },
-    { id: 26, name: 'Cod Fillet', category: 'Meat & Fish', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F185%2Fswordfish_smniuv.jpg&w=1920&q=75', price: '$5.80' },
-    { id: 27, name: 'Barney Butter', category: 'Dairy', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F305%2Fbutter_barney.jpg&w=1920&q=75', price: '$7.80' },
-    { id: 28, name: 'Kirkland Signature', category: 'Dairy', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F306%2Fbutter_kirkland.jpg&w=1920&q=75', price: '$8.80' },
-    { id: 29, name: 'Nikki S Milk', category: 'Dairy', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F322%2Fmilk_living_planet.jpg&w=1920&q=75', price: '$3.80' },
-    { id: 30, name: 'Purina Veterinary Diets', category: 'Pet Care', image: 'https://pickbazar-react-rest.vercel.app/_next/image?url=https%3A%2F%2Fpickbazarlaravel.s3.ap-southeast-1.amazonaws.com%2F272%2Fpurina_pro_plan.jpg&w=1920&q=75', price: '$8.80' },
+    { id: 1, name: 'Apples', category: 'Fruits & Vegetables', image: Apples, price: '$2.50' },
+    { id: 2, name: 'Baby Spinach', category: 'Fruits & Vegetables', image: BabySpinach, price: '$3.00' },
+    { id: 3, name: 'Blueberries', category: 'Fruits & Vegetables', image: BrusselsSprouts, price: '$4.20' },
+    { id: 4, name: 'Brussels Sprouts', category: 'Fruits & Vegetables', image: CelerySticks, price: '$5.50' },
+    { id: 5, name: 'Clementines', category: 'Fruits & Vegetables', image: Clementines, price: '$3.80' },
+    { id: 6, name: 'Cucumber', category: 'Fruits & Vegetables', image: Cucumber, price: '$2.50' },
+    { id: 7, name: 'Dates', category: 'Fruits & Vegetables', image: Dates, price: '$6.20' },
+    { id: 8, name: 'French Green Beans', category: 'Fruits & Vegetables', image: FrenchGreenBeans, price: '$4.00' },
+    { id: 9, name: 'Green Beans', category: 'Fruits & Vegetables', image: GreenBeans, price: '$4.50' },
+    { id: 10, name: 'Mangoes', category: 'Fruits & Vegetables', image: Mangoes, price: '$7.00' },
+    { id: 11, name: 'Mini Peppers', category: 'Fruits & Vegetables', image: MiniPeppers, price: '$5.60' },
+    { id: 12, name: 'Pears', category: 'Fruits & Vegetables', image: Pears, price: '$3.00' },
+    { id: 13, name: 'Peeled Carrots', category: 'Fruits & Vegetables', image: PeeledCarrots, price: '$9.80' },
+    { id: 14, name: 'Belmont Cream', category: 'Snacks', image: BelmontCream, price: '$8.80' },
+    { id: 15, name: 'Avo Derm Grain Free', category: 'Pet Care', image: AvoDermGrainFree, price: '$2.80' },
+    { id: 16, name: 'Hills Science Diet', category: 'Pet Care', image: HillsScienceDiet, price: '$2.8' },
+    { id: 17, name: 'Hill Mini Pack Mix', category: 'Snacks', image: HillMiniPackMix, price: '$8.45' },
+    { id: 18, name: 'Khong Guan Marie', category: 'Snacks', image: KhongGuanMarie, price: '$9.80' },
+    { id: 19, name: 'instinct_the_raw', category: 'Pet Care', image: instinct_the_raw, price: '$6.80' },
+    { id: 20, name: 'Pro Diet Balance', category: 'Pet Care', image: ProDietBalance, price: '$5.80' },
+    { id: 21, name: 'Fish', category: 'Meat & Fish', image: Fish, price: '$2.80' },
+    { id: 22, name: 'Signature Salmon', category: 'Meat & Fish', image: SignatureSalmon_fstp4m, price: '$8.80' },
+    { id: 23, name: 'Cod Fillet', category: 'Meat & Fish', image: codfillet_u0mti1, price: '$5.80' },
+    { id: 24, name: 'Barney Butter', category: 'Dairy', image: butter_barney, price: '$7.80' },
+    { id: 25, name: 'Kirkland Signature', category: 'Dairy', image: butter_kirkland, price: '$8.80' },
+    { id: 26, name: 'Nikki S Milk', category: 'Dairy', image: milk_cream_nammilk, price: '$3.80' },
+    { id: 27, name: 'Purina Veterinary Diets', category: 'Pet Care', image: purina_pro_plan, price: '$8.80' },
+    { id: 28, name: 'loaf_purple_pack', category: 'Breakfast', image: Farmhouse_Multigrain_Batch_loaf_purple_pack, price: '$6.20' },
+    { id: 29, name: 'Wholemeal_Bread', category: 'Breakfast', image: Everyday_Essentials_Wholemeal_Bread, price: '$7.20' },
+    { id: 30, name: 'Seeded Bloomer', category: 'Breakfast', image: _Seeded_Bloomer, price: '$9.20' },
+    { id: 31, name: 'Hill_Biscuits', category: 'Snacks', image: HillMiniPackMix, price: '$8.20' },
+    { id: 32, name: 'air_freshner', category: 'Home & Cleaning', image: air_freshner_acana_ozmo, price: '$7.20' },
+    { id: 33, name: 'air_wick_essential_oils', category: 'Home & Cleaning', image: air_freshner_air_wick_essential_oils, price: '$5.20' },
+    { id: 34, name: 'air-ambipur', category: 'Home & Cleaning', image: air_freshner_ambipur_air_sweet_citrus, price: '$4.20' },
+    { id: 35, name: 'oil_clover', category: 'Cooking', image: oil_clover, price: '$6.20' },
+    { id: 36, name: 'oil_san', category: 'Cooking', image: oil_san, price: '$9.20' },
+    { id: 37, name: 'chefa_rice', category: 'Cooking', image: chefa_choice_bamboo_rice, price: '$4.20' },
+    { id: 38, name: 'Aloevera', category: 'Health & Beauty', image: gnc_aloe_vera_moisturizing_cream, price: '$4.20' },
+    { id: 39, name: 'Bubble', category: 'Health & Beauty', image: bubble_bath, price: '$8.20' },
+    { id: 40, name: 'Eo_lotion', category: 'Health & Beauty', image: eo_lotion, price: '$3.20' },
+    { id: 41, name: 'Instinct_the_raw', category: 'Beverage', image: instincttheraw, price: '$3.20' },
+    { id: 42, name: 'Javarama_classic', category: 'Beverage', image: javarama_classic, price: '$3.20' },
+    { id: 43, name: 'starbucks_house_blend', category: 'Beverage', image: starbucks_house_blend, price: '$3.20' },
+    { id: 44, name: 'starbucks_vanilla_latte', category: 'Beverage', image: starbucks_vanilla_latte, price: '$3.20' },
   ];
 
 
@@ -249,7 +159,7 @@ const ProductList = ({ selectedCategory }) => {
 
   return (
     <div className="mx-5">
-      <Grid container spacing={2}>
+      {/* <Grid container spacing={2}>
         {filteredProducts.map((product) => (
           <Grid item xs={12} sm={6} lg={2} key={product.id}>
             <Card>
@@ -259,7 +169,69 @@ const ProductList = ({ selectedCategory }) => {
                 image={product.image}
                 alt={product.name}
                 onClick={() => handleCardClick(product)}
-                style={{ cursor: 'pointer' }}
+                style={{
+                  cursor: 'pointer',
+                  width: '200px',
+                  height: '250px',
+                  objectFit: 'cover',
+                  margin: '0 auto',
+                }}
+              />
+              <CardContent>
+                <Typography variant="h6">{product.name}</Typography>
+                <Box display="flex" justifyContent="space-between" alignItems="center" mt={2}>
+                  <Typography variant="body1" sx={{ color: '#019376', fontWeight: 'bold' }}>
+                    {product.price}
+                  </Typography>
+                  <Button
+                    variant="submit"
+                    sx={{
+                      color: '#019376',
+                      border: '1px solid rgb(211, 210, 210)',
+                      borderRadius: '16px',
+                      gap: '4px',
+                      transition: 'all 0.3s ease',
+                      '&:hover': {
+                        backgroundColor: '#019376',
+                        color: 'white',
+                      },
+                    }}
+                    onClick={() => dispatch(addToCart(product))}
+                  >
+                    <ShoppingBasketIcon style={{ fontSize: '18px' }} /> Cart
+                  </Button>
+                </Box>
+              </CardContent>
+            </Card>
+          </Grid>
+        ))}
+      </Grid> */}
+
+      <Grid container spacing={2}>
+        {filteredProducts.map((product) => (
+          <Grid
+            item
+            xs={12}  
+            sm={6}  
+            md={4}  
+            lg={3}   
+            xl={2}   
+            key={product.id}
+          >
+            <Card>
+              <CardMedia
+                component="img"
+                height="100%"
+                image={product.image}
+                alt={product.name}
+                onClick={() => handleCardClick(product)}
+                style={{
+                  cursor: 'pointer',
+                  width: '200px',
+                  height: '250px',
+                  objectFit: 'cover',
+                  margin: '0 auto',
+                }}
               />
               <CardContent>
                 <Typography variant="h6">{product.name}</Typography>
@@ -291,9 +263,24 @@ const ProductList = ({ selectedCategory }) => {
         ))}
       </Grid>
 
-      {/* Dialog for product details */}
+
+
       <Dialog open={openModal} onClose={handleCloseModal} fullWidth maxWidth="lg">
-        <DialogTitle>{selectedProduct?.name}</DialogTitle>
+        <DialogTitle>
+          {selectedProduct?.name}
+          <IconButton
+            aria-label="close"
+            onClick={handleCloseModal}
+            sx={{
+              position: 'absolute',
+              right: 8,
+              top: 8,
+              color: (theme) => theme.palette.grey[500],
+            }}
+          >
+            <CloseIcon />
+          </IconButton>
+        </DialogTitle>
         <DialogContent>
           <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
@@ -306,14 +293,20 @@ const ProductList = ({ selectedCategory }) => {
               <Typography variant="body1" gutterBottom>
                 {selectedProduct?.description}
               </Typography>
+              <Typography variant="body2" gutterBottom>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              </Typography>
               <Button
                 variant="contained"
                 color="primary"
                 fullWidth
                 onClick={() => handleAddToCart(selectedProduct)}
                 sx={{
+                  display: 'flex',
+                  textAlign: 'center',
                   marginTop: '16px',
                   backgroundColor: '#019376',
+                  textTransform: 'none',
                   '&:hover': {
                     backgroundColor: '#016c4f',
                   },
@@ -330,6 +323,7 @@ const ProductList = ({ selectedCategory }) => {
           </Button>
         </DialogActions>
       </Dialog>
+
     </div>
   );
 };
