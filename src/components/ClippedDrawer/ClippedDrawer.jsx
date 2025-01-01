@@ -159,53 +159,6 @@ const ProductList = ({ selectedCategory }) => {
 
   return (
     <div className="mx-5">
-      {/* <Grid container spacing={2}>
-        {filteredProducts.map((product) => (
-          <Grid item xs={12} sm={6} lg={2} key={product.id}>
-            <Card>
-              <CardMedia
-                component="img"
-                height="100%"
-                image={product.image}
-                alt={product.name}
-                onClick={() => handleCardClick(product)}
-                style={{
-                  cursor: 'pointer',
-                  width: '200px',
-                  height: '250px',
-                  objectFit: 'cover',
-                  margin: '0 auto',
-                }}
-              />
-              <CardContent>
-                <Typography variant="h6">{product.name}</Typography>
-                <Box display="flex" justifyContent="space-between" alignItems="center" mt={2}>
-                  <Typography variant="body1" sx={{ color: '#019376', fontWeight: 'bold' }}>
-                    {product.price}
-                  </Typography>
-                  <Button
-                    variant="submit"
-                    sx={{
-                      color: '#019376',
-                      border: '1px solid rgb(211, 210, 210)',
-                      borderRadius: '16px',
-                      gap: '4px',
-                      transition: 'all 0.3s ease',
-                      '&:hover': {
-                        backgroundColor: '#019376',
-                        color: 'white',
-                      },
-                    }}
-                    onClick={() => dispatch(addToCart(product))}
-                  >
-                    <ShoppingBasketIcon style={{ fontSize: '18px' }} /> Cart
-                  </Button>
-                </Box>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid> */}
 
       <Grid container spacing={2}>
         {filteredProducts.map((product) => (
