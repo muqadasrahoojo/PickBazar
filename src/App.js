@@ -6,7 +6,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import DualDrawerSidebar from './components/ClippedDrawer/ClippedDrawer';
 import Header from './Header/Header';
 import ImageSwiper from './components/SlideImgs/SlideImgs';
-import CartList from './components/AddToCart/AddToCart';
+import AddToCart from './components/AddToCart/AddToCart';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <Outlet />
       <ImageSwiper />
       <DualDrawerSidebar />
-      <CartList />
+      <AddToCart />
     </div>
   );
 }
