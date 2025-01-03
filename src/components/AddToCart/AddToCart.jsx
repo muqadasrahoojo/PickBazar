@@ -118,7 +118,7 @@ const AddToCart = () => {
                     />
 
                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
-                     
+
                       <Button
                         onClick={() => handleQuantityChange(item.id, 1)}
                         sx={{
@@ -245,4 +245,3 @@ const AddToCart = () => {
 };
 
 export default AddToCart;
-

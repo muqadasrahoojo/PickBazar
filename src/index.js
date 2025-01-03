@@ -8,8 +8,7 @@ import App from './App';
 import HeroSection from './components/HeroSection/HeroSection';
 import ErrorPage from './components/error-page/ErrorPage';
 import AddToCart from './components/AddToCart/AddToCart';
-
-
+import ProfilePage from './components/Pages/ProfileAccount';
 
 const router = createBrowserRouter([
   {
@@ -18,7 +17,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <HeroSection />, 
+        element: <HeroSection />, // Home page
       },
       {
         path: "add-to-cart",
@@ -27,7 +26,13 @@ const router = createBrowserRouter([
     ],
     errorElement: <ErrorPage />, 
   },
+  {
+    path: "/profile", 
+    element: <ProfilePage />,
+  },
 ]);
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
