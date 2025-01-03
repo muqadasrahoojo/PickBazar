@@ -91,4 +91,4 @@ const SignUpDialog = ({ open, handleClose, handleRegisterSuccess }) => {
   );
 };
 
-export default SignUpDialog;
+export default SignUpDialog; 
