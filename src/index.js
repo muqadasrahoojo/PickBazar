@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <HeroSection />, // Home page
+        element: <HeroSection />,
       },
       {
         path: "add-to-cart",
